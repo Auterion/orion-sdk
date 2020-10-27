@@ -88,7 +88,7 @@ BOOL OrionCommOpenNetworkIp(const char *pAddress)
         inet_pton(AF_INET, pAddress, &BroadcastAddr);
 
         // Now print out the broadcast address we're pinging
-        printf("Looking for gimbal on %s...\n", inet_ntop(AF_INET, &BroadcastAddr, IpString, INET_ADDRSTRLEN));
+        //printf("Looking for gimbal on %s...\n", inet_ntop(AF_INET, &BroadcastAddr, IpString, INET_ADDRSTRLEN));
 
         // Roll the bytes for our GetSockAddr function
         BroadcastAddr = ntohl(BroadcastAddr);
@@ -150,7 +150,7 @@ BOOL OrionCommOpenNetworkIp(const char *pAddress)
                 Address = htonl(Address);
 
                 // Now print out the IP address that we connected to and break out of the loop
-                printf("Connected to %s\n", inet_ntop(AF_INET, &Address, IpString, INET_ADDRSTRLEN));
+                //printf("Connected to %s\n", inet_ntop(AF_INET, &Address, IpString, INET_ADDRSTRLEN));
                 break;
             }
 
@@ -165,7 +165,7 @@ BOOL OrionCommOpenNetworkIp(const char *pAddress)
             BroadcastAddr = htonl(BroadcastAddr);
 
             // Let the user know we failed to connect
-            printf("Failed to connect to %s\n", inet_ntop(AF_INET, &BroadcastAddr, IpString, INET_ADDRSTRLEN));
+            //printf("Failed to connect to %s\n", inet_ntop(AF_INET, &BroadcastAddr, IpString, INET_ADDRSTRLEN));
         }
 
         // Close the UDP handle down now that we're done with it
